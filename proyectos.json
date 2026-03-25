@@ -1,0 +1,12 @@
+[
+  {
+    "nombre": "Proyecto 1",
+    "imagen": "trabajo1.jpg",
+    "url": "https://tuproyecto1.com"
+  },
+  {
+    "nombre": "Proyecto 2",
+    "imagen": "trabajo2.jpg",
+    "url": "https://tuproyecto2.com"
+  }
+]
