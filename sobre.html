@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sobre Bestiario</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+  margin:0;
+  background:#000;
+  color:#fff;
+  font-family:'Unbounded';
+  overflow-x:hidden;
+}
+
+/* MARCA */
+.brand{
+  position:fixed;
+  top:20px;
+  left:50%;
+  transform:translateX(-50%);
+  font-family:'Cinzel';
+  font-size:2.5rem;
+  opacity:.8;
+  z-index:10;
+}
+
+/* CONTENIDO */
+.container{
+  max-width:700px;
+  margin:auto;
+  padding:120px 20px 60px;
+  display:flex;
+  flex-direction:column;
+  gap:80px;
+  text-align:center;
+  align-items:center;
+}
+
+/* BLOQUES */
+.block{
+  opacity:0;
+  transform:translateY(40px);
+  transition:1.2s ease;
+}
+
+.block.visible{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* TEXTOS */
+h2{
+  font-weight:300;
+  letter-spacing:2px;
+  text-shadow: 0 0 6px rgba(255,255,255,0.08);
+}
+
+p{
+  opacity:.7;
+  line-height:1.6;
+  text-shadow: 0 0 4px rgba(255,255,255,0.05);
+}
+
+/* FRASE FINAL */
+.glitch{
+  font-size:1.2rem;
+  letter-spacing:3px;
+  opacity:.6;
+}
+
+/* BOTÓN */
+button{
+  margin-top:60px;
+  padding:12px 24px;
+  background:transparent;
+  border:1px solid #fff;
+  color:#fff;
+  cursor:pointer;
+  transition:.3s;
+}
+
+button:hover{
+  background:#fff;
+  color:#000;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="brand">Bestiario Lab</div>
+
+<div class="container">
+
+  <div class="block">
+    <h2>Bestiario no es un servicio.</h2>
+    <p>
+      Es un criterio.
+      <br><br>
+      Un lugar donde las ideas dejan de ser referencias
+      y empiezan a tomar forma propia.
+    </p>
+  </div>
+
+  <div class="block">
+    <h2>No se construyen páginas.</h2>
+    <p>
+      Se diseñan sistemas con intención.
+      <br><br>
+      Cada proyecto responde a una lógica,
+      una estética y una forma de existir en lo digital.
+    </p>
+  </div>
+
+  <div class="block">
+    <h2>El problema no es técnico.</h2>
+    <p>
+      Es conceptual.
+      <br><br>
+      La mayoría de las marcas se ven iguales
+      porque no toman decisiones reales.
+    </p>
+  </div>
+
+  <div class="block">
+    <h2>Aquí se decide.</h2>
+    <p>
+      Qué mostrar.<br>
+      Qué ocultar.<br>
+      Qué hacer sentir.
+    </p>
+  </div>
+
+  <div class="block">
+    <h2>¿Para quién es esto?</h2>
+    <p>
+      Para proyectos que no quieren parecerse a otros.
+      <br><br>
+      Para ideas que todavía no tienen forma,
+      pero necesitan una.
+    </p>
+  </div>
+
+  <div class="block">
+    <h2 class="glitch">
+      Si todo se ve igual,<br>
+      nada se recuerda.
+    </h2>
+  </div>
+
+  <button onclick="window.location.href='index.html'">
+    Volver
+  </button>
+
+</div>
+
+<script>
+
+// ANIMACIÓN DE APARICIÓN
+const blocks = document.querySelectorAll('.block');
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+    }
+  });
+}, {
+  threshold:0.2
+});
+
+blocks.forEach(block => observer.observe(block));
+
+</script>
+
+</body>
+</html>
